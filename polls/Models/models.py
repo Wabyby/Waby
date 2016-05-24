@@ -9,5 +9,9 @@ class User(models.Model):
     email = models.EmailField(max_length=70)
 
 class Boat(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User)
     name = models.CharField(max_length=100)
+
+class Crewrequest(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
